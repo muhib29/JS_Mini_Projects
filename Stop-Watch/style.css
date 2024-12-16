@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #edeffa;
+    font-family: Arial, sans-serif;
+}
+
+.stop-watch {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 170px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: #28a745;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button i {
+    font-size: 40px;
+    width: 50px;
+}
+
+button:hover {
+    background-color: #2a8840;
+}
+
+.start-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.start-btn:hover {
+    background-color: #218838;
+}
+
+.start-btn {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.start-btn:hover {
+    background-color: #e0a800;
+}
+
+.reset-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.reset-btn:hover {
+    background-color: #c82333;
+}

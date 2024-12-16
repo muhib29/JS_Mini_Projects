@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: rgb(224, 224, 224);
+}
+.container{
+    margin: 50px;
+}
+.container button{
+    padding: 10px 20px;
+    color: white;
+    background: black;
+    border: none;
+    margin: 10px;
+    outline: 0;
+    cursor: pointer;
+}
+#toast-Bar{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.toast{
+    width: 400px;
+    height: 80px;
+    background: white;
+    font-weight: 500;
+    margin: 15px 0 ;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+@keyframes moveleft {
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.toast i {
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+.error i{
+    color: red;
+}
+.invalid i{
+    color: orange;
+}
+
+.toast::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: white;  
+    animation: seekBar 5s linear forwards;
+    background-color: green;
+}
+
+@keyframes seekBar{
+    100%{
+        width: 0;
+    }
+
+}
+.toast.error::after {
+    background-color: red;
+}
+.toast.invalid::after {
+    background-color: orange;
+}

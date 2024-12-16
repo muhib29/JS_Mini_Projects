@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer - Listen to Your Own Music</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6cce38a5e4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <img src="songs/Abdul__Hamid/cover.jpg" class="songImg" alt="">
+            <h1>Pelevin</h1>
+            <p>Abdul__Hamid</p>
+            
+            <div class="controls">
+                <i class="fa-solid fa-backward" id="prev"></i>
+                <i class="fa-solid fa-play" onclick="audioPlay()" id="play"></i>
+                <i class="fa-solid fa-forward" id="next"></i>
+            </div>
+            
+            <div class="seek-bar">
+                <input type="range" id="seek" value="0" max="100">
+            </div>
+            
+            <audio id="audio" src="songs/Abdul__Hamid/Abdul_Hameed_Drama__Theme_Song(128k).mp3"></audio>
+        </div>
+    </div>
+
+<script>
+  let audio = document.getElementById("audio");
+  let seekBar = document.getElementById("seek")
+  function audioPlay(){
+    if(audio.paused){
+      audio.play();
+      document.getElementById("play").classList.remove("fa-play");
+      document.getElementById("play").classList.add("fa-pause");
+    } else {
+      audio.pause();
+      document.getElementById("play").classList.remove("fa-pause");
+      document.getElementById("play").classList.add("fa-play");
+    }
+  }
+  audio.onloadedmetadata = function(){
+    seekBar.max = audio.duration;
+    seekBar.value = audio.currentTime
+  }
+  if(audio.play){
+    setInterval(() => {
+        seekBar.value = audio.currentTime;
+    }, 500);
+  }
+  seekBar.addEventListener("click",(e)=>{
+    audio.currentTime = seekBar.value;
+  })
+</script>    
+</body>
+</html>

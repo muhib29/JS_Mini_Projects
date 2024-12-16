@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Bar</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <input type="text" id="inputField" readonly>
+      <select name="input" class="dropdown hide" id="dropdown">
+        <option value="select">Select an option</option>
+        <option value="Whatsapp">Whatsapp</option>
+        <option value="Instagram">Instagram</option>
+        <option value="YouTube">YouTube</option>
+        <option value="FaceBook">FaceBook</option>
+      </select>
+    </div>
+
+    <script>
+      var inputField = document.getElementById("inputField");
+      var dropdown = document.getElementById("dropdown");
+
+      // Toggle dropdown visibility when input field is clicked
+      inputField.onclick = function() {
+        dropdown.classList.toggle('hide');
+      };
+
+      // When an option is selected, update the input field
+      dropdown.onchange = function() {
+        inputField.value = dropdown.value;
+        dropdown.classList.add('hide'); // Hide dropdown after selection
+      };
+    </script>
+  </body>
+</html>

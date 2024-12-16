@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Strength Checker</h1>
+      <div class="input-group">
+        <label for="password">Enter Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          onkeyup="urPassword()"
+        />
+        <span class="spanText"></span>
+        <div class="div">
+          <input type="checkbox" id="cheakbox1" />Include Numbers
+          <input type="checkbox" id="cheakbox2" />Include Capital Letters
+          <input type="checkbox" id="cheakbox3" />Include Special Characters
+        </div>
+      </div>
+      <button id="check-strength">Check Strength</button>
+      <div id="strength-output"></div>
+    </div>
+
+    <script>
+      function urPassword() {
+        var pass = document.getElementById("password").value;
+        var span = document.querySelector(".spanText");
+        var cheakboxOne = document.getElementById("cheakbox1");
+        var cheakboxTwo = document.getElementById("cheakbox2");
+        var cheakboxThr = document.getElementById("cheakbox3");
+        if (pass.length < 8) {
+          span.textContent = "Your password is too short";
+          span.classList.add("short");
+          span.classList.remove("strong");
+          span.classList.remove("number");
+          span.classList.remove("long");
+        }
+        if (pass.length >= 8) {
+          span.textContent = "Your password is strong";
+          span.classList.add("strong");
+          span.classList.remove("number");
+          span.classList.remove("short");
+        }
+        if (pass.length > 16) {
+          span.textContent = "Your password is too long";
+          span.classList.add("long");
+          span.classList.remove("strong");
+          span.classList.remove("short");
+          span.classList.remove("number");
+        }
+        if (pass.length >= 8 && pass.length <= 16) {
+          span.textContent = "Your password is medium";
+          span.classList.add("number");
+          span.classList.remove("strong");
+          span.classList.remove("short");
+          span.classList.remove("long");
+        }
+        if (pass.match(/\d/)) {
+          cheakboxOne.checked = true;
+        }else{
+          cheakboxOne.checked = false;
+        }
+
+        if (pass.match(/[A-Z]/)) {
+          cheakboxTwo.checked = true;
+        }else{
+          cheakboxTwo.checked = false;
+        }
+
+        if (pass.match(/[^a-zA-Z0-9]/)) {
+          cheakboxThr.checked = true;
+      }else{
+          cheakboxThr.checked = false;
+        }
+    }
+    </script>
+  </body>
+</html>

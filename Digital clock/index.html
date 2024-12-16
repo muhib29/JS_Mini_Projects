@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock">
+            <div class="time">
+                <span id="hours">15</span>
+                <span>:</span>
+                <span id="minutes">13</span>
+                <span>:</span>
+                <span id="seconds">46</span>
+            </div>
+            <!-- <div class="am">AM</div> -->
+            <div class="labels">
+                <span>HOURS</span>
+                <span>MINS</span>
+                <span>SEC</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minutes');
+        let seconds = document.getElementById('seconds');
+        // let am = document.querySelector('.am');
+
+        function updateClock() {
+            let date = new Date();
+            let hoursnow = date.getHours();
+            let minutesnow = date.getMinutes();
+            let secondsnow = date.getSeconds();
+
+            // Convert to 12-hour format and set AM/PM
+            // let ampm = hoursnow >= 12 ? 'PM' : 'AM';
+            hoursnow = hoursnow % 12;
+            hoursnow = hoursnow ? hoursnow : 12; // If 0, change to 12
+
+            // Add leading zero to minutes and seconds if less than 10
+            hours.innerHTML = hoursnow < 10 ? '0' + hoursnow : hoursnow;
+            minutes.innerHTML = minutesnow < 10 ? '0' + minutesnow : minutesnow;
+            seconds.innerHTML = secondsnow < 10 ? '0' + secondsnow : secondsnow;
+
+            am.innerHTML = ampm;
+        }       
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to set the time immediately
+    </script>
+</body>
+</html>

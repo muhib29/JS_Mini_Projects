@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Backgroung Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="imgBox">
+            <img src="images/image.png" width="100%" alt="">
+            <div class="img-wrap">
+              <img src="images/images.png"  id="originalImg">
+            </div>
+            <span id="line">
+                <img class="arrow"  src="https://w7.pngwing.com/pngs/2/756/png-transparent-arrow-computer-icons-the-next-version-angle-presentation-logo-thumbnail.png" alt="">
+            </span>
+        </div>
+    </div>
+    <script>
+        var imgBox = document.querySelector('.imgBox');
+        var imgWrap = document.querySelector('.img-wrap');
+        var originalImg = document.getElementById('originalImg');
+        var line = document.getElementById('line');
+
+        originalImg.style.width = imgBox.offsetWidth + "px";
+        var leftSpace = imgBox.offsetLeft;
+        imgBox.addEventListener('mousemove', (e) => {
+            var boxWidth = (e.pageX - leftSpace ) + "px";
+            imgWrap.style.width = boxWidth;
+            line.style.left = boxWidth;
+        })
+    </script>   
+</body>
+</html>

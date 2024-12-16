@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    background: #bbc6fa;
+}
+.quote-Box{
+  background: white;
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10 20px 0px rgba(0,0,0,0.15);
+
+}
+.quote-Box h2{
+    font-family: "Playfair Display SC", serif;
+    font-style: italic;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    font-size: 35px;
+}
+.quote-Box h2::after{
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background: rgb(4, 8, 255);
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quote-Box blockquote{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 30px 0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.quote-Box blockquote::before,.quote-Box blockquote::after{
+    content: '"';
+}
+.quote-Box span{
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+.quote-Box span::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 18px;
+    background: rgb(4, 8, 255);
+    top: 50%;
+    left: -30px;    
+}
+
+.quote-Box div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+
+}
+
+.quote-Box button{
+    font-family: sans-serif;
+    background: rgb(4, 8, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid blue;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quote-Box img{
+    width: 30px;
+    margin-right: 7px;
+}
+.quote-Box button:nth-child(2){
+    /* background: transparent;
+    color: black; */
+}

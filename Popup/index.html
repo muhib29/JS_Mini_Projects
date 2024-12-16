@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup - Using JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <button id="submit-btn">Submit</button>
+      <div class="card" id="popup-card">
+        <div class="img">
+          <lord-icon
+            src="https://cdn.lordicon.com/bqkijzun.json"
+            trigger="hover"
+            stroke="bold"
+            colors="primary:#6c63ff,secondary:#6c63ff"
+            style="width: 80px; height: 80px"
+          >
+          </lord-icon>
+        </div>
+        <h1>Thank you!</h1>
+        <p>Your form has been submitted successfully</p>
+        <button class="ok">OK</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("submit-btn").addEventListener("click", function () {
+          document.getElementById("popup-card").style.display = "block";
+          document.getElementById("submit-btn").style.display = "none"
+        });
+      document.querySelector(".ok").addEventListener("click",()=>{
+        document.getElementById("popup-card").style.display = "none";
+        document.getElementById("submit-btn").style.display = "block"
+      })  
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoCurrency Website Design</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">Logo</div>
+        <ul>
+          <li>Market</li>
+          <li>Features</li>
+          <li>White Papers</li>
+          <li>About Us</li>
+        </ul>
+        <div class="button">
+          <button>EN</button>
+        </div>
+      </nav>
+      <main>
+        <h1>
+          Buy & <br />
+          Sell <span>Crypto</span>
+        </h1>
+        <p>
+          World's biggesr crypto currency exchange available on mobile <br />
+          as well as web.
+        </p>
+        <div>
+          <button class="btn">Explore more.</button>
+        </div>
+      </main>
+      <footer style="color: white;">
+        <div class="div">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
+            alt=""
+          />
+          <div>
+            <span id="bitmoney">$5658687</span>
+            <button>Bitcoin</button>
+        </div>
+            </div>
+        <div class="div">
+          <img
+            src="https://logowik.com/content/uploads/images/ethereum-eth7803.logowik.com.webp"
+            alt=""
+          />
+          <div>
+            <span id="ethmoney"> $5658687</span>
+            <button>Etherum</button>
+        </div>        </div>
+        <div class="div">
+          <img
+            src="https://cryptologos.cc/logos/versions/dogecoin-doge-logo-alternative.svg?v=033"
+            alt=""
+          />
+          <div>
+              <span id="dogecoin">$5658687</span>
+              <button>Dogecoin</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- <script> -->
+      // const bitmoney = document.getElementById('bitmoney');
+      // const ethmoney = document.getElementById('ethmoney');
+      // const dogecoin = document.getElementById('dogecoin');
+      // const bitBtn = document.getElementById('bitcoin');
+      // const ethBtn = document.getElementById('ethereum');
+      // const dogeBtn = document.getElementById('dogecoin');
+      
+      // bitBtn.addEventListener('click', () => {
+      //   fetchData("https://api.coingecko.com/api/v3/coins/bitcoin")
+      //  .then(data => bitmoney.innerText = `$${data.market_data.current_price.usd}`)
+      //  .catch(error => console.error('Error:', error));
+      // });
+      
+      // ethBtn.addEventListener('click', () => {
+      //   fetchData("https://api.coingecko.com/api/v3/coins/ethereum")
+      //  .then(data => ethmoney.innerText = `$${data.market} ${data.current_price.usd}`)
+      //  .catch(error => console.error('Error:', error));
+      // });
+// make me an async function
+// const api = "PhGXKoXFZceaZwfhhuLgWqvB"
+// async function load(api) {
+//     let api =  await fetch(api);
+//     let data = await api.json();
+//     console.log(data);
+// }
+// load()
+// make me function fro api
+//     async function fetchData(url) {
+//         try {
+//             const response = await fetch(url);
+//             if (!response.ok) {
+//                 throw new Error(`HTTP error! status: ${response.status}`);
+//             }
+//             return await response.json();
+//         } catch (error) {
+//             console.error('There has been a problem with your fetch operation:', error);
+//         }
+//     }
+// // this is my api key CG-PhGXKoXFZceaZwfhhuLgWqvB
+//     fetchData("https://api.coingecko.com/api/v3/coins/bitcoin")
+//    .then(data => console.log(data))
+//    .catch(error => console.error('Error:', error));
+
+//     fetchData("https://api.coingecko.com/api/v3/coins/ethereum")
+//    .then(data => console.log(data))
+//    .catch(error => console.error('Error:', error));
+//     fetchData("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false");
+ 
+    <!-- </script> -->
+     <script src="script.js"></script>
+  </body>
+</html>

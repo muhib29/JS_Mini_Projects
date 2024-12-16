@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page Design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="product-page">
+      <div class="product-image">
+        <img  id="product-image" class="img1" style="display: block;"
+          src="https://beoneshopone.com/cdn/shop/files/MTP0415-NVY.jpg?v=1724669846&width=900"
+          alt="Casual T Shirt"
+        />
+         <div class="controls">
+            <span class="btn active1"></span>
+            <span class="btn"></span>
+            <span class="btn"></span>
+         </div>
+      </div>
+      <div class="product-details">
+        <h2>Casual T Shirt</h2>
+        <h3>$15.00 <span>30% OFF</span></h3>
+        <p>
+          Wrangler is an American manufacturer of jeans and other clothing
+          items, particularly workwear.
+        </p>
+
+        <div class="size">
+          <p>Size</p>
+          <div class="size-options color1">
+            <button class="color">S</button>
+            <button class="color">M</button>
+            <button class="color">L</button>
+            <button class="color">XL</button>
+            <button class="color">XXL</button>
+          </div>
+        </div>
+
+        <div class="color">
+          <p>Color</p>
+          <div class="color-options">
+            <span class="red"></span>
+            <span class="blue"></span>
+            <span class="green"></span>
+            <span class="pink"></span>
+            <span class="black"></span>
+          </div>
+        </div>
+
+        <div class="quantity">
+          <p>Quantity</p>
+          <input type="number" value="1" min="1" />
+        </div>
+
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+
+    <script>
+        let btn = document.getElementsByClassName("btn"); 
+        let productImage = document.getElementById("product-image");
+        btn[0].onclick = function(){
+            productImage.src = "https://beoneshopone.com/cdn/shop/files/MTP0415-NVY.jpg?v=1724669846&width=900";
+            for(bt of btn){
+                bt.classList.remove("active1");
+            }
+            this.classList.add("active1");
+        }
+        btn[1].onclick = function(){
+            productImage.src = "https://beoneshopone.com/cdn/shop/files/MTP0415-NVY16.jpg?v=1724669846&width=900";
+                 for(bt of btn){
+                bt.classList.remove("active1");
+            }
+            this.classList.add("active1");
+            
+        }
+        btn[2].onclick = function(){
+            productImage.src = "https://beoneshopone.com/cdn/shop/files/MTP0415-NVY3.jpg?v=1724669846&width=900";
+                 for(bt of btn){
+                bt.classList.remove("active1");
+            }
+            this.classList.add("active1");
+        }
+
+      // Add event listeners to size and color options
+      const colorButtons = document.querySelectorAll(".color-options span");
+      colorButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            if (button.classList.contains("active")) {
+              button.classList.remove("active");
+            } else {
+              button.classList.add("active");
+            }
+        });
+      })
+      const sizeButtons = document.querySelectorAll(".size-options button");
+      sizeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (button.classList.contains("color1")) {
+            button.classList.add("active");
+            button.classList.remove("color1");
+          }else{
+            button.classList.add("color1");
+            button.classList.remove("active");
+          }
+        });
+      });
+      // Add event listener to buy now button
+      const buyNowButton = document.querySelector(".buy-now");
+      buyNowButton.addEventListener("click", () => {
+        alert("Item added to cart");
+      });
+
+
+    </script>
+  </body>
+</html>
